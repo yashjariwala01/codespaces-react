@@ -35,7 +35,6 @@ function App() {
       setMode("light");
       document.body.style.backgroundColor="white";
       showAlert("Light mode has been switched","success");
-
     }
   }  
 

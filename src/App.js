@@ -44,7 +44,7 @@ function App() {
     <Navbar title="The Delta Company" about="about our company" mode={mode} switchMode ={switchModefunc} />
     <Alert alert={alert}/>
     <div className="container col-8 my-4">
-    <TextForm showAlert={showAlert} heading="Enter the text" mode={mode}/>  
+    <TextForm heading="Enter the text" mode={mode} showAlert={showAlert} />  
     {/* <About/> */}
     </div>
   </div>

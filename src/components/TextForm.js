@@ -29,8 +29,8 @@ function TextForm(props){
    }
 
    function eventListenerForCT(){
-       let text = document.getElementById("textUtil")
-       navigator.clipboard.writeText(text.value)
+       let text = document.getElementById("textUtil").value
+       navigator.clipboard.writeText(text)
        props.showAlert("Text Copied to Clipboard", "success")
    }
 
@@ -59,7 +59,7 @@ function TextForm(props){
        <button className="btn btn-primary mx-2" onClick={eventListenerForLC}>To lower Case</button> 
        <button className="btn btn-primary mx-2" onClick={eventListenerForCT}>copy text</button><br/>
        <div className="mt-3 ">
-           <label className='' htmlFor="find">Find</label>
+           <label htmlFor="find">Find</label>
            <input className="mx-2" value={findWord} onChange={handleFindChange} type="text" id='find'/>
            <label className="mx-3" htmlFor="replace">Replace</label>
            <input value={replaceWord} onChange={handleReplaceChange} type="text" id="replace" />
@@ -73,7 +73,7 @@ function TextForm(props){
        
        <div className="container my4" style={{color: props.mode==="dark"? 'white': 'black'}} >
            <h1>Your Text Summary</h1>
-           <p>{text.split(" ").length} words and {text.length}</p>
+           <p>{text.split(" ").filter((element)=> element.length!==0).length} words and {text.length}</p>
            <p>{Math.floor(0.008 * text.split(" ").length)} minutes to read</p>
            <h3>Preview</h3>
            <p>{text.slice(0,500)}...</p>
